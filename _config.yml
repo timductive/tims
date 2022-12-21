@@ -14,6 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Quips & Quirks on Engineering Management
+subtitle: Version 3.2
+name: Tim Schnell
+logo: "assets/images/logo.png"
 email: tim.schnell@hey.com
 url: https://tims.io
 description: >- # this means to ignore newlines until "baseurl:"
