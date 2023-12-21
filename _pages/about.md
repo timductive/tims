@@ -12,11 +12,13 @@ May 2019 - PRESENT
 
 Currently managing the Kibana Analyst Experience team. Responsible for your favorite open source Analytics tools like Discover, Dashboard, Lens and Maps.
 
-## Board Member | Subscription Box Kids, Remote
-March 2016 - PRESENT
+## Co-founder | Subscription Box Kids, Austin, Tx
+March 2016 - August 2023
 
 Kid subscription boxes to inspire a love of reading, math, science, and more! Delivered monthly.
 We believe that all children are capable of reaching their full potential when given the proper tools and opportunities.
+
+*Acquired August 2023.*
 
 ## Head of Engineering | New Knowledge, Austin, Tx
 October 2018 - April 2019
@@ -25,7 +27,7 @@ Grew the engineering organization from 12 to over 35 people, instituted a cultur
 
 ### Key Contributions
 - Hired and managed an engineering organization of 35+ contributors
-- Measured and improved reliability of services from 0 > 98%
+- Measured and improved initial reliability of services from 0 up to 98%
 - Increased team velocity and software release cadence
 - Setup cross-functional teams in conjunction with Product
 

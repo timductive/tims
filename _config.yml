@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Quips & Quirks on Engineering Management
-subtitle: Version 3.2
+title: Quips & Quirks
+subtitle: ...on life, love and the pursuit of software engineering
 name: Tim Schnell
 logo: "assets/images/logo.png"
 email: tim.schnell@hey.com
@@ -64,18 +64,18 @@ author:
   avatar : "/assets/images/tim-bio-min.png"
   bio    : "Director of Engineering @elastic, previously @rackspace and a sundry of startups. Thoughts & opinions are my own. This is not the algorithm."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://tims.io/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/__tims___"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://www.facebook.com/tim.schnell"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/__tims___"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/timductive"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/timateomateo"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://tims.io/"
 
 footer:
   links:
@@ -87,7 +87,7 @@ footer:
       url: "https://github.com/timductive"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/timateomateo"
+      url: "https://instagram.com/__tims___"
 
 defaults:
   # _posts

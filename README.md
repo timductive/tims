@@ -1,4 +1,25 @@
-# Minimal Mistakes remote theme starter
+# Tim's Current Blog
+
+## Local Setup
+If you are setting up from a brand new Ubuntu install, first [install ruby](https://stackoverflow.com/questions/37720892/you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory).
+
+After you have Ruby installed, install bundler and jekyll.
+```
+gem install bundler
+gem install jekyll
+```
+
+Then install things local to this repo
+```
+cd ./tims
+bundle install
+```
+
+Now you can run the server locally
+```
+bundle exec jekyll serve
+```
+## Minimal Mistakes remote theme starter
 
 Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
 
@@ -18,7 +39,7 @@ Replace sample content with your own and [configure as necessary](https://mmista
 
 ---
 
-## Troubleshooting
+### Troubleshooting
 
 If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
 
