@@ -20,9 +20,7 @@ Recently my wife and I decided to expand our measly 10&#215;10 back patio to a 4
 
 &#8220;Why don&#8217;t we just do it? It will be a piece of cake man.&#8221; said Rocksteady confidently, as he finished off another beer.
 
-&nbsp;
-
-#  Step 2: Convince Your Wife That You Can Do It
+# Step 2: Convince Your Wife That You Can Do It
 
 So after a few days of deliberation and a couple of youtube videos, I started to think, yeah this doesn&#8217;t seem so bad. It&#8217;s like baking a cake! Is what I was thinking at the time. As the days went by and the wife got closer and closer to calling back the lowest bidder I finally broke.
 
@@ -40,8 +38,6 @@ Here is a picture of us being happy together. (It&#8217;s from a long time ago)
 
 Let&#8217;s really hold on to the moment in the picture and cherish it. We are going to need it.
 
-&nbsp;
-
 # Step 3: Wake Up Early and Rent a Bobcat
 
 &#8220;I&#8217;ll be there at 5:30 tomorrow morning.&#8221; said Rocksteady.
@@ -54,19 +50,13 @@ I had just finished telling him that it was go time.
 
 [<img class="aligncenter size-full wp-image-2100" src="http://tims.io/wp-content/uploads/2013/11/22.jpg" alt="22" width="960" height="720" srcset="https://tims.io/img/2013/11/22.jpg 960w, https://tims.io/img/2013/11/22-300x225.jpg 300w, https://tims.io/img/2013/11/22-660x495.jpg 660w" sizes="(max-width: 960px) 100vw, 960px" />](http://tims.io/wp-content/uploads/2013/11/22.jpg)
 
-&nbsp;
-
 One thing to note, anytime that you have to get large things into your backyard, the only way to do it is to take down part of your fence, which sucks.
 
 Rocksteady proved to be an excellent Bobcat driver as he had previous experience and soon the backyard was looking like a dirty, muddy mess!
 
 [<img class="aligncenter size-full wp-image-2104" src="http://tims.io/wp-content/uploads/2013/11/23.jpg" alt="23" width="720" height="960" srcset="https://tims.io/img/2013/11/23.jpg 720w, https://tims.io/img/2013/11/23-225x300.jpg 225w, https://tims.io/img/2013/11/23-660x880.jpg 660w" sizes="(max-width: 720px) 100vw, 720px" />](http://tims.io/wp-content/uploads/2013/11/23.jpg)
 
-&nbsp;
-
 Also, look at how cute! My dogs liked to ride in the Bobcat with their new best friend, Rocksteady!
-
-&nbsp;
 
 # Step 4: Put Some Dirt Back Holmes
 
@@ -77,8 +67,6 @@ Man, Rocksteady and I sure did a good job of leveling out the backyard. We did s
 Pouring a foot of concrete for around 300 square feet would cost 2 or 3 thousand dollars just for concrete, I later found out. Oh also, we already returned the Bobcat, because it&#8217;s the next day now.
 
 To make this part of the story shorter I spent the next weekend buying dirt and rocks and filling the patio back in.
-
-&nbsp;
 
 # Step 5: Schedule the Cement Truck Before You are Ready
 
@@ -94,13 +82,11 @@ Finally, it was seriously time to pour some concrete. So I called the place and 
 
 # Step 6: Keep Putting Dirt Back Until 2 AM!
 
-The night before the truck was to arrive I realized that I still had not quite filled in the patio up to 6 inches, and with only 8 1/2 yards of concrete coming some quick math said that I was in trouble. Luckily Bebop was staying the night because I didn&#8217;t trust him to actually arrive at 6 the next morning.<figure id="attachment_2062" aria-describedby="caption-attachment-2062" style="width: 960px" class="wp-caption aligncenter">
+The night before the truck was to arrive I realized that I still had not quite filled in the patio up to 6 inches, and with only 8 1/2 yards of concrete coming some quick math said that I was in trouble. Luckily Bebop was staying the night because I didn&#8217;t trust him to actually arrive at 6 the next morning.
 
-[<img class="size-full wp-image-2062" src="http://tims.io/wp-content/uploads/2013/10/7.jpg" alt="7" width="960" height="640" srcset="https://tims.io/img/2013/10/7.jpg 960w, https://tims.io/img/2013/10/7-300x200.jpg 300w, https://tims.io/img/2013/10/7-720x480.jpg 720w" sizes="(max-width: 960px) 100vw, 960px" />](http://tims.io/wp-content/uploads/2013/10/7.jpg)<figcaption id="caption-attachment-2062" class="wp-caption-text">Would you trust this man?</figcaption></figure> 
+[<img class="size-full wp-image-2062" src="http://tims.io/wp-content/uploads/2013/10/7.jpg" alt="7" width="960" height="640" srcset="https://tims.io/img/2013/10/7.jpg 960w, https://tims.io/img/2013/10/7-300x200.jpg 300w, https://tims.io/img/2013/10/7-720x480.jpg 720w" sizes="(max-width: 960px) 100vw, 960px" />](http://tims.io/wp-content/uploads/2013/10/7.jpg)Would you trust this man?
 
 So Bebop and I purchased more rocks and dirt and filled in the rest of the patio until about 2 in the morning.
-
-&nbsp;
 
 # Step 7: Set the Forms!
 
@@ -116,17 +102,11 @@ Crap, that&#8217;s not good enough. I feel like some concrete might escape&#8230
 
 Oh also, holy crap! Put some rebar or something and yeah, probably drill and epoxy it into the existing foundation! Science!
 
-&nbsp;
-
 # Step 8: Compact That Shit!
 
 Wait crap, did we do the rebar? No don&#8217;t do that yet. First, COMPACT THAT SHIT!
 
 [<img class="aligncenter size-full wp-image-2065" src="http://tims.io/wp-content/uploads/2013/10/10.jpg" alt="10" width="960" height="640" srcset="https://tims.io/img/2013/10/10.jpg 960w, https://tims.io/img/2013/10/10-300x200.jpg 300w, https://tims.io/img/2013/10/10-720x480.jpg 720w" sizes="(max-width: 960px) 100vw, 960px" />](http://tims.io/wp-content/uploads/2013/10/10.jpg)
-
-&nbsp;
-
-&nbsp;
 
 # Step 9: Freak Out! (On The Inside)
 
@@ -136,9 +116,7 @@ Dispell these thoughts! These thoughts are the difference between being awesome 
 
 [<img class="aligncenter size-full wp-image-2060" src="http://tims.io/wp-content/uploads/2013/10/5.jpg" alt="5" width="960" height="640" srcset="https://tims.io/img/2013/10/5.jpg 960w, https://tims.io/img/2013/10/5-300x200.jpg 300w, https://tims.io/img/2013/10/5-720x480.jpg 720w" sizes="(max-width: 960px) 100vw, 960px" />](http://tims.io/wp-content/uploads/2013/10/5.jpg)
 
-## _ Too late! The truck is here!_
-
-&nbsp;
+## _Too late! The truck is here!_
 
 # Step 10: Admire How Stalwart Your Friends Are
 
@@ -157,8 +135,6 @@ This wasn&#8217;t so bad though, my shoes aren&#8217;t even getting dirty.
 [<img class="aligncenter size-full wp-image-2057" src="http://tims.io/wp-content/uploads/2013/10/2.jpg" alt="2" width="960" height="640" srcset="https://tims.io/img/2013/10/2.jpg 960w, https://tims.io/img/2013/10/2-300x200.jpg 300w, https://tims.io/img/2013/10/2-720x480.jpg 720w" sizes="(max-width: 960px) 100vw, 960px" />](http://tims.io/wp-content/uploads/2013/10/2.jpg)After a while though, this gets exhausting. In retrospect, I should have realized that having 8 and a half tons of concrete delivered to my house means that I will be pushing and moving a literal [elephant](http://en.wikipedia.org/wiki/Elephant) amount of concrete using primarily sticks and measly, pasty inside-y arms.
 
 Also, we should totally measure concrete in elephants.
-
-&nbsp;
 
 # Step 11: Listen To Your Wife Tell You &#8220;I Told You So&#8221;
 
@@ -203,8 +179,6 @@ Every inch of my body hurts and the playful banter and conversations had died aw
 Finally, every last bag of concrete has been thrown into the mass and we smooth it out as it races to dry. It is 9:00 pm. My shoes, pants and hair have also solidified. I&#8217;m like the freaking Tin Man from the Wizard of Oz, except I&#8217;m concrete and have no heart.
 
 Maybe it&#8217;s the beer, maybe it&#8217;s the heat but I&#8217;m done and the weight on my shoulders has been baked into the earth.
-
-# 
 
 # Epilogue
 
