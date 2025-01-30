@@ -1,4 +1,11 @@
-# Thinking about Thinking
+---
+id: ''
+title: Thinking about Thinking
+tags:
+- engineering
+- management
+
+---
 
 Clear decisions start from clear thinking.
 Clear decisions are robust and durable. They are flexible towards unknowns and simple to explain.
