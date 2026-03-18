@@ -70,24 +70,24 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/__tims___"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/timschnell"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/timductive"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://tims.io/"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/__tims___"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/timductive"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/__tims___"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/timschnell"
 
 defaults:
   # _posts

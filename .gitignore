@@ -4,4 +4,6 @@ _site
 Gemfile.lock
 
 .bundle
+.bundle-cache
+.bundle-cache/
 vendor/bundle
