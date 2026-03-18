@@ -324,6 +324,20 @@
     );
   }
 
+  function isTypingContext(target) {
+    if (!target) {
+      return false;
+    }
+
+    var tagName = target.tagName;
+    return (
+      tagName === "INPUT" ||
+      tagName === "TEXTAREA" ||
+      tagName === "SELECT" ||
+      target.isContentEditable
+    );
+  }
+
   function enhanceSearchPresentation(searchContent, searchForm, searchInput, results) {
     if (!searchContent || !searchForm || !searchInput || !results) {
       return;
@@ -606,6 +620,22 @@
 
       if (event.key === "Tab" && searchToggle && searchContent && initialContent && syncSearchState(searchToggle, searchContent, initialContent, searchInput)) {
         trapFocus(event, searchContent);
+      }
+
+      if (
+        searchToggle &&
+        searchContent &&
+        initialContent &&
+        !syncSearchState(searchToggle, searchContent, initialContent, searchInput) &&
+        !isTypingContext(event.target) &&
+        (
+          (event.key === "/" && !event.metaKey && !event.ctrlKey && !event.altKey) ||
+          ((event.key === "k" || event.key === "K") && (event.metaKey || event.ctrlKey))
+        )
+      ) {
+        event.preventDefault();
+        searchTrigger = searchToggle;
+        searchToggle.click();
       }
     });
   });
