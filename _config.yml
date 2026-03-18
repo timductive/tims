@@ -25,6 +25,8 @@ twitter_username: __tims___
 github_username: timductive
 minimal_mistakes_skin: dark
 search: true
+head_scripts:
+  - /assets/js/terminal-ui.js
 
 # Build settings
 markdown: kramdown
