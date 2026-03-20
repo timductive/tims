@@ -64,7 +64,7 @@ plugins:
 author:
   name   : "Tim Schnell"
   avatar : "/assets/images/tim-bio-min.png"
-  bio    : "Director of Engineering @elastic, previously @rackspace and a sundry of startups. Thoughts & opinions are my own. This is not the algorithm."
+  bio    : "Director of Engineering @elastic, previously @rackspace and a sundry of startups. Thoughts & opinions are my own."
   links:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
