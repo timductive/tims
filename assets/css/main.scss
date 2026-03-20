@@ -172,7 +172,7 @@ select:focus-visible,
 }
 
 .masthead {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   border-bottom: 1px solid var(--terminal-border-strong);
   background:
     linear-gradient(180deg, rgba(5, 24, 12, 0.96), rgba(3, 15, 7, 0.92));
@@ -356,6 +356,38 @@ button {
 .page__related,
 .comments {
   background: transparent;
+}
+
+.page__hero--overlay {
+  position: relative;
+  isolation: isolate;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0;
+}
+
+.page__hero--overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.58) 38%,
+    rgba(0, 0, 0, 0.32) 68%,
+    rgba(0, 0, 0, 0.16) 100%
+  );
+}
+
+.page__hero--overlay .wrapper,
+.page__hero--overlay .page__title,
+.page__hero--overlay .page__lead,
+.page__hero--overlay .page__meta,
+.page__hero--overlay .page__meta * {
+  position: relative;
+  z-index: 1;
 }
 
 .layout--home #main,
@@ -1024,7 +1056,7 @@ hr {
 
 @media (max-width: 63.9375em) {
   .masthead {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .archive,
