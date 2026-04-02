@@ -12,16 +12,33 @@
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#031106">
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<style>
+  /* Paint the site shell immediately to avoid a light flash on navigation. */
+  html {
+    background: #031106;
+    color-scheme: dark;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top, rgba(68, 176, 84, 0.16), transparent 34%),
+      radial-gradient(circle at bottom, rgba(34, 120, 46, 0.14), transparent 42%),
+      linear-gradient(180deg, #05150a 0%, #020703 100%);
+    color: #98f5a7;
+  }
+</style>
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ asset_stamp }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
+<link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-400.woff2' | relative_url }}?v={{ asset_stamp }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/vt323-latin-400.woff2' | relative_url }}?v={{ asset_stamp }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
 

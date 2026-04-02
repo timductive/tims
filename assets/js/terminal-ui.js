@@ -31,6 +31,71 @@
     return normalized || "/";
   }
 
+  var prefetchedPages = Object.create(null);
+
+  function isPrefetchableLink(link) {
+    var url;
+
+    if (!link || !link.href || link.target === "_blank" || link.hasAttribute("download")) {
+      return false;
+    }
+
+    if (link.getAttribute("href").indexOf("#") === 0) {
+      return false;
+    }
+
+    try {
+      url = new URL(link.href, window.location.origin);
+    } catch (error) {
+      return false;
+    }
+
+    if (url.origin !== window.location.origin) {
+      return false;
+    }
+
+    if (url.protocol !== "http:" && url.protocol !== "https:") {
+      return false;
+    }
+
+    if (url.pathname === window.location.pathname && !url.search && !url.hash) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function prefetchPage(url) {
+    var prefetch;
+
+    if (!url || prefetchedPages[url]) {
+      return;
+    }
+
+    prefetchedPages[url] = true;
+    prefetch = document.createElement("link");
+    prefetch.rel = "prefetch";
+    prefetch.as = "document";
+    prefetch.href = url;
+    document.head.appendChild(prefetch);
+  }
+
+  function maybePrefetchLink(target) {
+    var link;
+
+    if (!target || typeof target.closest !== "function") {
+      return;
+    }
+
+    link = target.closest("a[href]");
+
+    if (!isPrefetchableLink(link)) {
+      return;
+    }
+
+    prefetchPage(link.href);
+  }
+
   function isVisible(element) {
     return Boolean(element && element.getClientRects().length);
   }
@@ -436,8 +501,21 @@
       }
     });
 
-    document.addEventListener("pointerdown", function () {
+    document.addEventListener("mouseover", function (event) {
+      maybePrefetchLink(event.target);
+    }, true);
+
+    document.addEventListener("focusin", function (event) {
+      maybePrefetchLink(event.target);
+    });
+
+    document.addEventListener("touchstart", function (event) {
+      maybePrefetchLink(event.target);
+    }, { passive: true });
+
+    document.addEventListener("pointerdown", function (event) {
       lastInteractionWasKeyboard = false;
+      maybePrefetchLink(event.target);
     });
 
     if (nav) {
