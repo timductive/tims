@@ -1,5 +1,8 @@
 main:
-  - title: "About"
+  - title: about
     url: /about/
-  - title: "Topics"
-    url: /tags/
+  - title: blog
+    url: /blog/
+  - title: work
+    url: /work/
+    enabled_by: show_work   # only shown while site.show_work is true

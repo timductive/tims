@@ -1,0 +1,54 @@
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.site-footer__inner {
+  @extend .container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 40px;
+  padding-bottom: 44px;
+  flex-wrap: wrap;
+}
+.site-footer__id {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.site-footer__wordmark {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.site-footer__wordmark .wordmark__name,
+.site-footer__wordmark .wordmark__tld { color: var(--text-muted); }
+.site-footer__line { font-size: 13px; color: var(--text-meta); }
+.site-footer__social {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+.site-footer__social a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-meta);
+  border-radius: var(--r-sm);
+}
+.site-footer__social a:hover { color: var(--jade); background: var(--bg-card); }
+
+.site-footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.site-footer__nav a { padding: 10px 0; color: var(--text-muted); }
+.site-footer__nav a:hover { color: var(--jade); }
+.site-footer__copy { color: var(--text-faint); }

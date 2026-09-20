@@ -1,0 +1,19 @@
+# Repos shown under "$ gh repo list" on the Work page. Static — fill in by hand.
+- name: "[repo-name]"
+  url: https://github.com/timductive
+  description: "[One line on what it does and why it exists.]"
+  language: Python
+  language_color: "#5CCB8C"
+  stars: "[N]"
+- name: "[repo-name]"
+  url: https://github.com/timductive
+  description: "[One line on what it does and why it exists.]"
+  language: TypeScript
+  language_color: "#D9A441"
+  stars: "[N]"
+- name: "[repo-name]"
+  url: https://github.com/timductive
+  description: "[One line on what it does and why it exists.]"
+  language: Lua
+  language_color: "#7C8B83"
+  stars: "[N]"

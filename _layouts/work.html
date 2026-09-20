@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- assign items = site.work | sort: "order" -%}
+{%- assign categories = items | map: "category" | uniq -%}
+<div class="container">
+  <header class="page-head">
+    <div class="page-head__row">
+      <div class="page-head__text">
+        {% include cmd.html text="ls work/ --long" %}
+        <h1 class="page-head__title">{{ page.title }}</h1>
+        <p class="page-head__intro">{{ page.description | default: site.work_intro }}</p>
+      </div>
+      <div class="chip-row">
+        <a class="chip" href="{{ '/work/' | relative_url }}" data-filter-chip="" aria-current="true">all</a>
+        {%- for c in categories %}
+        <a class="chip" href="{{ '/work/' | relative_url }}?filter={{ c | url_encode }}" data-filter-chip="{{ c }}">{{ c }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+    <p class="visually-hidden" data-filter-status aria-live="polite"></p>
+  </header>
+
+  <section class="work-list" data-filter-list data-filter-param="filter" data-filter-attr="data-category" aria-label="Work">
+    {%- for w in items %}
+    {% include work-card.html item=w %}
+    {%- endfor %}
+  </section>
+
+  {%- if site.data.repos.size > 0 %}
+  <section class="section section--tight work-repos" aria-labelledby="repos-title">
+    <div class="rule-heading">
+      <span class="cmd" id="repos-title"><span class="cmd__prompt">$</span> gh repo list --limit {{ site.data.repos.size }}</span>
+      <span class="rule-heading__line"></span>
+      <a class="rule-heading__link" href="https://github.com/{{ site.github_username }}" rel="noopener noreferrer" target="_blank">all repos →</a>
+    </div>
+    <div class="grid grid--3">
+      {%- for r in site.data.repos %}
+      <a class="card repo-card" href="{{ r.url }}" rel="noopener noreferrer" target="_blank">
+        <span class="repo-card__name">{{ r.name }}</span>
+        <span class="repo-card__desc">{{ r.description }}</span>
+        <span class="repo-card__foot">
+          <span class="repo-card__lang"><span class="repo-card__swatch" style="background: {{ r.language_color | default: '#7C8B83' }}"></span>{{ r.language }}</span>
+          {%- if r.stars %}<span>★ {{ r.stars }}</span>{% endif %}
+        </span>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+</div>

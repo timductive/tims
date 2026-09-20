@@ -1,0 +1,73 @@
+// Design tokens — "refined terminal" system.
+// Every color/size the layouts use comes from here.
+
+:root {
+  // Ground
+  --bg: #0B0F0D;
+  --bg-card: #0F1512;
+  --bg-media: #121A16;
+  --bg-panel: #0E1411;
+  --bg-chrome: #131A16;
+  --bg-button: #111714;
+  --bg-input: #0B0F0D;
+  --bg-code: #0E1411;
+
+  // Borders
+  --border: #222C27;
+  --border-strong: #2E3A34;
+  --border-hair: #1A2320;
+  --grid-line: #1B2420;
+  --grid-dot: #1F2A25;
+
+  // Text
+  --text-heading: #F2F6F3;
+  --text: #E8EDE9;
+  --text-lede: #B4C2BA;
+  --text-ui: #C6D2CC;
+  --text-muted: #92A39B;
+  --text-meta: #6B7A73;
+  --text-label: #7C8B83;
+  --text-faint: #4D5B54;
+  --text-ghost: #3F4B45;
+  --text-dim: #5A6862;
+
+  // Accent — jade
+  --jade: #5CCB8C;
+  --jade-hover: #93E2B7;
+  --on-jade: #07120C;
+  --jade-tint: #16211C;
+  --jade-mark-bg: #1E3329;
+  --jade-mark: #7FE0AC;
+
+  // Accent — amber
+  --amber: #D9A441;
+  --amber-tint: #1A2420;
+  --amber-tint-warm: #221D14;
+
+  // Type
+  --font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Segoe UI Symbol", "Apple Symbols", monospace;
+
+  // Grid
+  --content-max: 1120px;
+  --gutter: 80px;
+  --gap: 24px;
+  --measure: 720px;
+
+  // Radii
+  --r-xs: 5px;
+  --r-sm: 7px;
+  --r-md: 9px;
+  --r-lg: 12px;
+  --r-xl: 14px;
+
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--jade);
+}
+
+@media (max-width: 1024px) {
+  :root { --gutter: 40px; }
+}
+@media (max-width: 720px) {
+  :root { --gutter: 20px; --gap: 16px; }
+}

@@ -1,0 +1,9 @@
+{%- comment -%}
+One-line lede for a post: front-matter `description`, else the excerpt stripped to plain text.
+Usage: {% include post-lede.html post=post %}
+{%- endcomment -%}
+{%- if include.post.description -%}
+{{ include.post.description }}
+{%- else -%}
+{{ include.post.excerpt | strip_html | normalize_whitespace | truncate: 160 }}
+{%- endif -%}

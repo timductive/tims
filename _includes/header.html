@@ -1,0 +1,31 @@
+{%- assign on_search = false -%}
+{%- if page.url == "/search/" %}{% assign on_search = true %}{% endif -%}
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.wordmark.name }}{{ site.wordmark.tld }} — home">{% include wordmark.html %}</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      {% include icon.html name="menu" size=18 class="icon nav-toggle__open" %}
+      {% include icon.html name="close" size=18 class="icon nav-toggle__close" %}
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        {%- for item in site.data.navigation.main %}
+        {%- if item.enabled_by and site[item.enabled_by] != true %}{% continue %}{% endif -%}
+        {%- assign current = false -%}
+        {%- if page.url == item.url or page.url contains item.url %}{% assign current = true %}{% endif -%}
+        {%- if item.url == "/blog/" and page.layout == "post" %}{% assign current = true %}{% endif -%}
+        <li><a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor %}
+        <li>
+          <a class="search-button{% if on_search %} search-button--active{% endif %}" href="{{ '/search/' | relative_url }}"{% if on_search %} aria-current="page"{% endif %}>
+            {% include icon.html name="search" size=14 class="icon search-button__icon" %}
+            <span>search</span>
+            {%- unless on_search %}<kbd class="search-button__kbd" aria-hidden="true">⌘K</kbd>{% endunless %}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

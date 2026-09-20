@@ -1,0 +1,57 @@
+# Career timeline for /about/. Newest first. `current: true` renders the period in jade.
+- period: "2019 — present"
+  current: true
+  title: Director of Engineering
+  org: Elastic
+  location: Remote
+  summary: "Currently leading the Kibana Application Experience group."
+
+- period: "2016 — 2023"
+  title: Co-founder
+  org: Subscription Box Kids
+  location: Austin, TX
+  summary: "Kid subscription boxes to inspire a love of reading, math, science, and more. Acquired August 2023."
+
+- period: "2018 — 2019"
+  title: Head of Engineering
+  org: New Knowledge
+  location: Austin, TX
+  summary: "Recruited and grew the engineering organization from 12 to 35+ contributors in under eight months."
+  bullets:
+    - Benchmarked and improved service reliability to 99.9%.
+    - Established consistent team velocity and a predictable software release cadence.
+    - Built and managed cross-functional teams in partnership with Product.
+
+
+- period: "2014 — 2018"
+  title: Head of Engineering
+  org: Cratejoy
+  location: Austin, TX
+  summary: "Key early leader; scaled the company from 10 to 70 employees over three years and the product from $0 to $10M ARR."
+  bullets:
+    - Held engineering turnover below 10% through that period of growth.
+    - Set the engineering vision and executed a multi-year strategy to resolve scaling constraints; presented the analysis, execution plan, and budget to the executive team and secured funding for permanent resolution.
+    - Founded the Site Reliability Engineering team, eliminating customer-facing Sev-1 outages for 24 consecutive months.
+    - Implemented CI/CD, increasing code releases from 3 to 35 per week.
+    - Partnered with the Head of Product to run company OKRs and hold teams accountable to quarterly goals.
+
+- period: "2014 — 2018"
+  title: Technical Advisor
+  org: Multiple Startups
+  location: Remote
+  summary: "Advised small companies on technical implementation and strategic direction."
+
+- period: "2013 — 2014"
+  title: Software Developer
+  org: Rackspace
+  location: Austin, TX
+  summary: "Primary point of contact for the open-source Horizon/Heat integration for OpenStack."
+ 
+- period: "2009 — 2013"
+  title: Senior Software Engineer
+  org: The University of Texas at Austin
+  location: Austin, TX
+  summary: "Primary architect of the Python/Django infrastructure housing all Provost Information Systems, and technical lead for every Provost-related application."
+  bullets:
+    - Architected a faculty, student, and facilities reporting system that gave executive leadership data-driven analysis for decision-making; served as university-wide consultant for Python/Django adoption.
+

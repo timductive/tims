@@ -1,0 +1,18 @@
+{%- comment -%}Wide "latest" card. Usage: {% include post-featured.html post=site.posts.first %}{%- endcomment -%}
+{%- assign p = include.post -%}
+<a class="featured" href="{{ p.url | relative_url }}">
+  <div class="featured__media">
+    {% include post-hero.html post=p %}
+  </div>
+  <div class="featured__body">
+    <div class="meta meta--lg">
+      <span class="tag tag--fill">latest</span>
+      <span>{{ p.date | date: "%Y-%m-%d" }}</span>
+      <span class="meta__sep">·</span>
+      <span>{% include read-time.html post=p %} read</span>
+    </div>
+    <h2 class="featured__title">{{ p.title }}</h2>
+    <p class="featured__lede">{% include post-lede.html post=p %}</p>
+    <span class="card__cta">read the post →</span>
+  </div>
+</a>

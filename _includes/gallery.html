@@ -1,0 +1,48 @@
+{%- assign frames = site.data.gallery -%}
+{%- assign total = frames.size -%}
+{%- assign first = frames | first -%}
+<div class="window gallery" data-gallery tabindex="0" aria-roledescription="carousel" aria-label="Gallery">
+  <div class="window__bar">
+    <span class="window__dot"></span><span class="window__dot"></span><span class="window__dot"></span>
+    <span class="window__title">~/gallery — <span data-gallery-title>{{ first.file }}</span></span>
+    <span class="window__aside" data-gallery-counter>01 / {% if total < 10 %}0{% endif %}{{ total }}</span>
+  </div>
+
+  <div class="gallery__stage">
+    {%- for f in frames %}
+    <div class="gallery__frame" data-gallery-frame="{{ f.file }}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ total }}"{% unless forloop.first %} hidden{% endunless %}>
+      {%- if f.image %}
+      <img class="gallery__img" src="{{ f.image | relative_url }}" alt="{{ f.alt | default: f.title }}" loading="lazy">
+      {%- else %}
+      <div class="placeholder gallery__placeholder"><span class="placeholder__label">{{ f.label }}</span></div>
+      {%- endif %}
+      <span class="gallery__kind">{{ f.kind }}</span>
+    </div>
+    {%- endfor %}
+    {%- if total > 1 %}
+    <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous image" data-gallery-prev>{% include icon.html name="chevron-left" size=17 %}</button>
+    <button class="gallery__nav gallery__nav--next" type="button" aria-label="Next image" data-gallery-next>{% include icon.html name="chevron-right" size=17 %}</button>
+    {%- endif %}
+  </div>
+
+  {%- if total > 1 %}
+  <div class="gallery__dots">
+    {%- for f in frames %}
+    <button class="gallery__dot" type="button" aria-label="Show image {{ forloop.index }}" data-gallery-dot{% if forloop.first %} aria-current="true"{% endif %}><span></span></button>
+    {%- endfor %}
+    <span class="gallery__hint">← → to step</span>
+  </div>
+  {%- endif %}
+
+  <div class="gallery__meta kv">{%- comment -%} all blocks share one grid cell; the tallest sets the height {%- endcomment -%}
+    {%- for f in frames %}
+    <div data-gallery-meta{% unless forloop.first %} hidden{% endunless %}>
+      <div class="kv__cmd cmd"><span class="cmd__prompt">$</span> file {{ f.file }}</div>
+      <div class="kv__row"><span class="kv__key">title</span><span class="kv__val">{{ f.title }}</span></div>
+      <div class="kv__row"><span class="kv__key">kind</span><span class="kv__val kv__val--amber">{{ f.kind }}</span></div>
+      <div class="kv__row"><span class="kv__key">year</span><span class="kv__val">{{ f.year }}</span></div>
+      <div class="kv__row kv__row--wrap"><span class="kv__key">note</span><span class="kv__val kv__val--muted">{{ f.note }}</span></div>
+    </div>
+    {%- endfor %}
+  </div>
+</div>

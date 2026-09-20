@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{%- assign tag_list = site.tags | sort -%}
+{%- comment -%} Tags with 2+ posts, most-used first (Liquid can't sort a hash by size, so bucket by count). {%- endcomment -%}
+{%- assign chip_tags = "" | split: "" -%}
+{%- assign counts = "" | split: "" -%}
+{%- for t in tag_list %}{% if t[1].size > 1 %}{% assign counts = counts | push: t[1].size %}{% endif %}{% endfor -%}
+{%- assign counts = counts | uniq | sort | reverse -%}
+{%- for c in counts %}{% for t in tag_list %}{% if t[1].size == c %}{% assign chip_tags = chip_tags | push: t %}{% endif %}{% endfor %}{% endfor -%}
+
+<div class="container">
+  <header class="page-head">
+    <div class="page-head__row">
+      <div class="page-head__text">
+        {% include cmd.html text="ls blog/ --sort=date" %}
+        <h1 class="page-head__title">{{ page.title }}</h1>
+        <p class="page-head__intro">{{ page.description | default: site.blog_intro }}</p>
+      </div>
+      <a class="btn btn--secondary btn--small" href="{{ '/feed.xml' | relative_url }}">
+        {% include icon.html name="rss" size=14 %}
+        <span>subscribe via RSS</span>
+      </a>
+    </div>
+
+  </header>
+
+  <section class="blog-featured" aria-label="Latest post">
+    {% include post-featured.html post=site.posts.first %}
+  </section>
+
+  <div class="blog-filter-wrap">
+    <div class="chip-row blog-filter" data-chip-overflow>
+      <span class="chip-row__label">filter:</span>
+      <a class="chip" href="{{ '/blog/' | relative_url }}" data-filter-chip="" aria-current="true">all · {{ site.posts.size }}</a>
+      {%- for t in chip_tags %}
+      <a class="chip" href="{{ '/blog/' | relative_url }}?tag={{ t[0] | url_encode }}" data-filter-chip="{{ t[0] }}">{{ t[0] }} · {{ t[1].size }}</a>
+      {%- endfor %}
+    </div>
+    <p class="blog-filter__status visually-hidden" data-filter-status aria-live="polite"></p>
+  </div>
+
+  <section class="blog-list" data-filter-list data-filter-param="tag" data-filter-attr="data-tags" aria-label="All posts by year">
+    {%- assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
+    {%- for year in by_year %}
+    <div class="blog-year" data-filter-group>
+      <div class="rule-heading">
+        <span class="rule-heading__label">{{ year.name }}</span>
+        <span class="rule-heading__line"></span>
+      </div>
+      {%- for post in year.items %}
+      {% include post-row.html post=post %}
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </section>
+</div>

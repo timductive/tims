@@ -1,71 +1,34 @@
 ---
-permalink: /about/
 title: "About"
+layout: about
+permalink: /about/
+headline: "What makes us human, makes our software."
+description: "Engineering leader with 15+ years scaling organizations from early startup to public company. Consistent record of converting technical execution into measured business outcomes: user growth, customer satisfaction, performance, and delivery velocity in close partnership with Product. Leading adoption of AI-native development practices, establishing trust in agentic delivery workflows while eliminating AI-DLC bottlenecks and preserving engineering quality and craft."
+portrait: /assets/images/tim-bio.jpg
+portrait_alt: "Tim Schnell"
+facts:
+  - label: based
+    value: Austin, TX
+  - label: working
+    value: Remote
+  - label: years
+    value: 15+
+  - label: stack
+    value: Python · React
+principles:
+  - title: Clear thinking first
+    text: The right amount of analysis is the key to making good decisions great. Too little and we quickly implement the wrong thing, too much and we lose trust in the process and speed of execution.
+  - title: Judgment matters most
+    text: It depends, make space for nuance. Pressure test and question things. Build confidence in what needs to get done. Agents accelerate the implementation. Knowing what should be built is still the job.
+  - title: Build empathy
+    text: Understanding each other and our users is the first step to building great software. Show your work, have the courage to dissent and the wisdom to accept another perspective.
+education:
+  - year: "2009"
+    text: Software Developer Certification — The University of Texas at Austin
+  - year: "2007"
+    text: B.A. Psychology — The University of Texas at Austin
 ---
 
-Product-focused Engineering Leader with 15+ years experience building and scaling teams from startup to public-company environments. Proven success in growing organizations, launching widely-adopted products, and aligning technical execution to business outcomes. Drives healthy, metrics-driven engineering cultures through strong Product partnership and mentorship.
+Engineering leader with 15+ years scaling organizations from early startup to public company. Consistent record of converting technical execution into measured business outcomes: user growth, customer satisfaction, performance, and delivery velocity in close partnership with Product. Leading adoption of AI-native development practices, establishing trust in agentic delivery workflows while eliminating AI-DLC bottlenecks and preserving engineering quality and craft.
 
-Currently, lives in the suburbs of Austin, Texas with his wife, Tina, and 3 kids. In his spare time he enjoys indoctrinating his children into nerdy hobbies like video/board games, superhero movies and books.
-
-## Director of Engineering | Elastic, Remote
-May 2019 - PRESENT
-
-- Manages the Kibana Analyst Experience group (30 engineers), focused on building well-known open-source products including Discover, Lens, elastic-charts, and Dashboards.
-- Leads AI working group, focused on education, tooling and usage of Agentic coding workflows.
-- Program Lead for cross-company collaboration in Discover and Dashboards.
-- Co-leads a company-wide peer mentorship program.
-- Led the transition from technology-focused to product-focused development, establishing key metrics, user workflows, and long-term roadmaps in partnership with Product.
-- Developed tooling and metrics to track bug and regression velocity, successfully reducing the backlog to acceptable levels.
-
-
-## Co-founder | Subscription Box Kids, Austin, Tx
-March 2016 - August 2023
-
-Kid subscription boxes to inspire a love of reading, math, science, and more! 
-
-*Acquired August 2023.*
-
-## Head of Engineering | New Knowledge, Austin, Tx
-October 2018 - April 2019
-
-- Recruited and grew the engineering organization from 12 to 35+ contributors.
-- Measured and improved service reliability from 0% to 98%.
-- Measured and then achieved consistent team velocity and software release cadence.
-- Set up and managed cross-functional teams in conjunction with Product.
-
-## Head of Engineering | Cratejoy, Austin, Tx
-August 2014 - October 2018
-
-- Key early member who scaled the company from 10 to 70 employees over 3 years.
-- Scaled the product from $0 to $10M Annual Recurring Revenue (ARR).
-- Maintained engineering turnover rate of less than 10%.
-- Partnered with the Head of Product to organize Objectives and Key Results (OKRs) and hold teams accountable to quarterly goals.
-- Set the Engineering Vision, proactively executing a long-term strategy to solve scaling issues.
-- Exposed complex engineering scaling metrics to leadership with an execution plan and budget proposal for permanent problem resolution.
-- Created a Site Reliability Engineering (SRE) team, reducing outages down to 0%.
-- Implemented CI/CD, which increased the number of code releases from 3 to 35 per week.
-- Worked cross-functionally with Sales, Support, and Marketing to retain valuable customers by providing technical expertise, advice, and solutions.
-
-
-## Technical Advisor | Multiple Startups, Remote
-February 2014 - September 2018
-
-Worked with small companies to review technical implementations and plan strategic direction.
-
-## Software Developer | Rackspace, Austin, Tx
-May 2013 - August 2014
-
-- Primary point of contact for the open-source Horizon/Heat integration for Openstack.
-- Built a cloud orchestration resource topology using d3.js and worked with the community to include it in Openstack’s UI.
-- Built a satellite front-end team in the Austin office, responsible for interfacing with backend teams to gather requirements and productize new open-source cloud technologies.
-
-## Senior Software Engineer | University of Texas, Austin, Tx
-January 2009 - May 2013
-
-- Architected a system to collect and display faculty, student, and facilities information, providing Executive leadership with data-driven analysis for decision-making.
-- Primary System Architect of a Python/Django Infrastructure to house all related Provost Information Systems.
-- Served as a University-wide technical consultant for the Python/Django adoption process.
-- Primary technical lead for all Provost-related applications.
-- Implemented internet security enhancements for all Liberal Arts web applications, including Cross-site Scripting and Cross-site Request Forgery protection.
-- Primary contact for administrative clients on several key client-oriented applications.
-- Technical consultant/trainer for team members on Python/Django languages.
+Currently, lives in the suburbs of Austin, Texas with his wife, Tina, and 3 kids. In his spare time he enjoys indoctrinating his children into his favorite things like Magic the Gathering, 3D Printing, Jurassic Park (1 only), all the video games, and Dungeon Crawler Carl (this one maybe not yet for the kids).

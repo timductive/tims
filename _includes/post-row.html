@@ -1,0 +1,11 @@
+{%- comment -%}Year-list row. Usage: {% include post-row.html post=post %}{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign first_tag = p.tags | first -%}
+<a class="post-row" href="{{ p.url | relative_url }}" data-tags="{{ p.tags | join: '|' }}">
+  <span class="post-row__date"><time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%m · %d" }}</time></span>
+  <span class="post-row__main">
+    <span class="post-row__title">{{ p.title }}</span>
+    <span class="post-row__lede">{% include post-lede.html post=p %}</span>
+  </span>
+  {%- if first_tag %}<span class="tag post-row__tag">{{ first_tag }}</span>{% endif %}
+</a>

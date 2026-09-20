@@ -1,0 +1,141 @@
+.about-intro { padding: 80px 0 68px; }
+.about-intro__inner {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+.about-intro__side {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-portrait {
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--bg-media);
+}
+.about-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about-portrait__placeholder { height: 100%; }
+.about-facts {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 18px 18px 16px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 2;
+}
+.about-facts__row { display: flex; justify-content: space-between; gap: 16px; }
+.about-facts dt { color: var(--text-label); }
+.about-facts dd { margin: 0; color: var(--text-ui); text-align: right; }
+
+.about-intro__main {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.about-intro__title {
+  font-size: clamp(34px, 4.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.about-intro__prose {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--text-lede);
+}
+.about-intro__prose a { color: var(--jade); }
+.about-intro__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+// Career timeline
+.career { display: flex; flex-direction: column; }
+.career__row {
+  display: flex;
+  gap: 32px;
+  padding: 26px 0;
+  border-top: 1px solid var(--border);
+}
+.career__row:last-child { border-bottom: 1px solid var(--border); }
+.career__period {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-label);
+  width: 150px;
+  flex-shrink: 0;
+  padding-top: 5px;
+}
+.career__period--current { color: var(--jade); }
+.career__body { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.career__title { font-size: 21px; font-weight: 600; }
+.career__org { color: var(--text-label); font-weight: 400; }
+.career__summary { font-size: 16px; line-height: 1.65; color: var(--text-muted); max-width: 720px; }
+.career__details { max-width: 720px; margin-top: 4px; }
+.career__details summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-meta);
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.career__details summary::-webkit-details-marker { display: none; }
+.career__details summary::before { content: "+"; color: var(--jade); }
+.career__details[open] summary::before { content: "−"; }
+.career__details summary:hover { color: var(--text-ui); }
+.career__bullets {
+  margin-top: 12px;
+  padding-left: 18px;
+  list-style: disc;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.career__bullets li { margin-bottom: 6px; }
+.career__bullets li::marker { color: var(--text-faint); }
+
+// Principles
+.principle { padding: 26px 24px; gap: 12px; }
+.principle__num { font-family: var(--font-mono); font-size: 12px; color: var(--amber); }
+.principle__title { font-size: 19px; font-weight: 600; }
+.principle__text { font-size: 15px; line-height: 1.65; color: var(--text-muted); }
+
+.row--edu .row__key { width: 70px; font-size: 13px; }
+
+@media (max-width: 1024px) {
+  .about-intro { padding: 56px 0; }
+  .about-intro__inner { flex-direction: column; gap: 32px; }
+  .about-intro__side { width: 100%; flex-direction: row; align-items: flex-start; }
+  .about-portrait { width: 220px; }
+  .about-facts { flex-grow: 1; }
+}
+@media (max-width: 720px) {
+  .about-intro { padding: 40px 0 44px; }
+  .about-intro__side { flex-direction: column; }
+  .about-portrait { width: 100%; max-width: 300px; }
+  .about-intro__prose { font-size: 18px; }
+  .about-intro__actions .btn { width: 100%; }
+  .career__row { flex-direction: column; gap: 8px; padding: 20px 0; }
+  .career__period { width: auto; padding-top: 0; }
+}

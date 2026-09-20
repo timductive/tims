@@ -1,0 +1,34 @@
+---
+layout: null
+sitemap: false
+---
+{%- assign entries = "" | split: "" -%}
+{%- for post in site.posts -%}
+  {%- capture lede %}{% include post-lede.html post=post %}{% endcapture -%}
+  {%- capture entry -%}
+  {"type":"post","title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":{{ post.date | date: "%Y-%m-%d" | jsonify }},"meta":{{ post.date | date: "%Y-%m-%d" | jsonify }},"tags":{{ post.tags | jsonify }},"excerpt":{{ lede | strip | jsonify }},"content":{{ post.content | strip_html | normalize_whitespace | truncate: 6000, "" | jsonify }}}
+  {%- endcapture -%}
+  {%- assign entries = entries | push: entry -%}
+{%- endfor -%}
+{%- if site.show_work -%}
+{%- for w in site.work -%}
+  {%- capture text %}{{ w.problem }} {{ w.approach }} {{ w.outcome }} {{ w.stack | join: " " }} {{ w.content | strip_html }}{% endcapture -%}
+  {%- capture url %}/work/#{{ w.slug }}{% endcapture -%}
+  {%- capture entry -%}
+  {"type":"work","title":{{ w.title | jsonify }},"url":{{ url | relative_url | jsonify }},"date":"","meta":{{ w.org | jsonify }},"tags":{{ w.stack | jsonify }},"excerpt":{{ w.summary | default: w.problem | jsonify }},"content":{{ text | normalize_whitespace | jsonify }}}
+  {%- endcapture -%}
+  {%- assign entries = entries | push: entry -%}
+{%- endfor -%}
+{%- endif -%}
+{%- for p in site.pages -%}
+  {%- if p.title and p.searchable != false and p.url != "/search/" and p.layout != nil -%}
+    {%- capture text %}{{ p.headline }} {{ p.description }} {{ p.content | strip_html }}{% endcapture -%}
+    {%- capture entry -%}
+  {"type":"page","title":{{ p.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"date":"","meta":{{ p.url | remove: "/" | jsonify }},"tags":[],"excerpt":{{ p.description | default: p.headline | default: "" | jsonify }},"content":{{ text | normalize_whitespace | truncate: 6000, "" | jsonify }}}
+    {%- endcapture -%}
+    {%- assign entries = entries | push: entry -%}
+  {%- endif -%}
+{%- endfor -%}
+[
+{{ entries | join: "," }}
+]

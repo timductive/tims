@@ -1,0 +1,20 @@
+{%- comment -%}
+Card hero: the post's image when it has one, otherwise a generated mark
+(day-of-year modulo 3 picks one of three CSS backgrounds — stable per post).
+Usage: {% include post-hero.html post=post %}
+{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign first_tag = p.tags | first -%}
+<div class="card__hero-wrap">
+  {%- if p.image %}
+  <img class="card__hero" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: '' }}" loading="lazy">
+  {%- else %}
+  {%- assign v = p.date | date: "%j" | plus: 0 | modulo: 3 -%}
+  <div class="card__hero card__hero--mark v{{ v }}">
+    <span class="mark">[ {{ first_tag | default: "note" }} ]</span>
+    <span class="mark-rule"></span>
+    <span class="slug">{{ p.path | split: "/" | last }}</span>
+  </div>
+  {%- endif %}
+  {%- if first_tag %}<span class="card__hero-tag">{{ first_tag }}</span>{% endif %}
+</div>

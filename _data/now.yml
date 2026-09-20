@@ -1,0 +1,9 @@
+# The "Now" section on the home page.
+updated: "[MONTH YEAR]"
+items:
+  - label: leading
+    text: "Agentic interfaces and vector search UI inside Kibana, plus the design system the rest of Elastic builds on."
+  - label: building
+    text: "A B2B platform for booking hotels and coordinating travel for industrial crews on remote job sites."
+  - label: writing
+    text: "On what two decades of software practice still gets right when agents write the first draft."

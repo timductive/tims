@@ -1,0 +1,16 @@
+{%- comment -%}Compact work card for the home page. Usage: {% include work-teaser.html item=w %}{%- endcomment -%}
+{%- assign w = include.item -%}
+<a class="card work-teaser" href="{{ '/work/' | relative_url }}#{{ w.slug }}">
+  <div class="work-teaser__media">
+    {%- if w.image %}
+    <img src="{{ w.image | relative_url }}" alt="{{ w.image_alt | default: '' }}" loading="lazy">
+    {%- else %}
+    <div class="placeholder work-teaser__placeholder"><span class="placeholder__label">{{ w.image_label | default: "[IMAGE]" }}</span></div>
+    {%- endif %}
+  </div>
+  <div class="card__body work-teaser__body">
+    <span class="work-teaser__meta">{{ w.org }}{% if w.period %} · {{ w.period }}{% elsif w.role %} · {{ w.role }}{% endif %}</span>
+    <h3 class="card__title">{{ w.title }}</h3>
+    <p class="card__lede">{{ w.summary | default: w.problem }}</p>
+  </div>
+</a>

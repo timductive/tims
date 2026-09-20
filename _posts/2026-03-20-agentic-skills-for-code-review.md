@@ -1,9 +1,8 @@
 ---
 id: ''
 title: Agentic Skills for Code Review
-header:
-  overlay_image: /assets/images/posts/agentic-skills-code-review-title.jpg
-  teaser: /assets/images/posts/agentic-skills-code-review-title.jpg
+image: /assets/images/posts/agentic-skills-code-review-title.jpg
+image_alt: ""
 tags:
 - engineering
 - ai

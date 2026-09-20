@@ -1,0 +1,112 @@
+---
+layout: default
+---
+{%- assign github = site.author.links | where: "icon", "github" | first -%}
+{%- assign linkedin = site.author.links | where: "icon", "linkedin" | first -%}
+
+<section class="section section--rule about-intro">
+  <div class="container about-intro__inner">
+    <div class="about-intro__side">
+      <div class="about-portrait">
+        {%- if page.portrait %}
+        <img src="{{ page.portrait | relative_url }}" alt="{{ page.portrait_alt | default: '' }}">
+        {%- else %}
+        <div class="placeholder about-portrait__placeholder"><span class="placeholder__label">[PORTRAIT — 3:4]</span></div>
+        {%- endif %}
+      </div>
+      {%- if page.facts %}
+      <dl class="about-facts">
+        {%- for f in page.facts %}
+        <div class="about-facts__row"><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {%- endfor %}
+      </dl>
+      {%- endif %}
+    </div>
+
+    <div class="about-intro__main">
+      {% include cmd.html text="cat about.md" %}
+      <h1 class="about-intro__title">{{ page.headline | default: page.title }}</h1>
+      <div class="about-intro__prose">
+        {{ content }}
+      </div>
+      <div class="about-intro__actions">
+        <a class="btn btn--primary" href="mailto:{{ site.email }}">get in touch</a>
+        {%- if linkedin %}<a class="btn btn--secondary" href="{{ linkedin.url }}" rel="me noopener noreferrer" target="_blank">linkedin</a>{% endif %}
+        {%- if github %}<a class="btn btn--secondary" href="{{ github.url }}" rel="me noopener noreferrer" target="_blank">github</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if site.data.career.size > 0 %}
+<section class="section section--rule" aria-labelledby="career-title">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading__text">
+        {% include cmd.html text='git log --author="tim" --oneline' %}
+        <h2 class="section-heading__title" id="career-title">Career</h2>
+      </div>
+    </div>
+    <div class="career">
+      {%- for job in site.data.career %}
+      <div class="career__row">
+        <span class="career__period{% if job.current %} career__period--current{% endif %}">{{ job.period }}</span>
+        <div class="career__body">
+          <h3 class="career__title">{{ job.title }} <span class="career__org">· {{ job.org }}</span></h3>
+          {%- if job.summary %}<p class="career__summary">{{ job.summary }}</p>{% endif %}
+          {%- if job.bullets %}
+          <details class="career__details">
+            <summary>{{ job.bullets.size }} highlights</summary>
+            <ul class="career__bullets">
+              {%- for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
+            </ul>
+          </details>
+          {%- endif %}
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- if page.principles %}
+<section class="section section--rule" aria-labelledby="principles-title">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading__text">
+        {% include cmd.html text="cat principles.md" %}
+        <h2 class="section-heading__title" id="principles-title">How I lead</h2>
+      </div>
+    </div>
+    <div class="grid grid--3">
+      {%- for p in page.principles %}
+      <div class="card principle">
+        <span class="principle__num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+        <h3 class="principle__title">{{ p.title }}</h3>
+        <p class="principle__text">{{ p.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- if page.education %}
+<section class="section section--rule" aria-labelledby="edu-title">
+  <div class="container split">
+    <div class="split__aside">
+      {% include cmd.html text="cat edu.txt" %}
+      <h2 class="section-heading__title" id="edu-title">Education</h2>
+    </div>
+    <div class="split__body rows">
+      {%- for e in page.education %}
+      <div class="row row--edu">
+        <span class="row__key">{{ e.year }}</span>
+        <p class="row__text">{{ e.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

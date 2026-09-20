@@ -1,0 +1,84 @@
+---
+layout: default
+---
+{%- assign first_tag = page.tags | first -%}
+{%- capture toc %}{% include toc.liquid html=content h_min=2 h_max=3 flat_toc=true class="toc__list" anchor_class="toc__link" %}{% endcapture -%}
+{%- assign has_toc = false -%}
+{%- if toc contains "<a" %}{% assign has_toc = true %}{% endif -%}
+
+<div class="breadcrumb">
+  <div class="container">
+    <nav class="breadcrumb__inner" aria-label="Breadcrumb">
+      <a href="{{ '/' | relative_url }}">~</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="{{ '/blog/' | relative_url }}">blog</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__current" aria-current="page">{{ page.slug }}</span>
+    </nav>
+  </div>
+</div>
+
+<article class="post">
+  <div class="container">
+    <header class="post__head">
+      <div class="meta meta--lg">
+        {%- if first_tag %}<span class="tag tag--fill">{{ first_tag }}</span>{% endif %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        <span class="meta__sep">·</span>
+        <span>{% include read-time.html post=page %} read</span>
+      </div>
+      <h1 class="post__title">{{ page.title }}</h1>
+      <p class="post__lede">{% include post-lede.html post=page %}</p>
+      <div class="post__author">
+        <img class="post__avatar" src="{{ site.author.avatar | relative_url }}" alt="" width="42" height="42">
+        <div class="post__author-text">
+          <span class="post__author-name">{{ site.author.name }}</span>
+          <span class="post__author-title">{{ site.author.title }}</span>
+        </div>
+      </div>
+    </header>
+
+    {%- if page.image %}
+    <figure class="post__cover">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}">
+    </figure>
+    {%- endif %}
+
+    <div class="post__columns">
+      <aside class="post__aside">
+        {%- if has_toc %}
+        <nav class="toc" aria-labelledby="toc-title" data-toc>
+          <span class="aside__label" id="toc-title">ON THIS PAGE</span>
+          {{ toc }}
+        </nav>
+        {%- endif %}
+        <div class="share">
+          <span class="aside__label">SHARE</span>
+          <div class="share__row">
+            <a class="share__btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">{% include icon.html name="linkedin" size=16 %}</a>
+            <button class="share__btn" type="button" aria-label="Copy link" data-copy-link>{% include icon.html name="link" size=16 %}<span class="visually-hidden" data-copy-text>copy link</span></button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="post__body">
+        <div class="prose">
+          {{ content }}
+        </div>
+        {%- if page.tags.size > 0 %}
+        <div class="post__tags chip-row">
+          <span class="chip-row__label">tagged:</span>
+          {%- for tag in page.tags %}
+          <a class="tag tag--plain" href="{{ '/blog/' | relative_url }}?tag={{ tag | url_encode }}">{{ tag }}</a>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</article>
+
+<div class="container">
+  {% include pagination-prevnext.html %}
+  {% include related-posts.html %}
+</div>

@@ -1,0 +1,36 @@
+{%- comment -%}Full work entry. Usage: {% include work-card.html item=w %}{%- endcomment -%}
+{%- assign w = include.item -%}
+{%- assign status_class = "status" -%}
+{%- if w.status == "in progress" %}{% assign status_class = "status status--amber" %}{% endif -%}
+<article class="work-card" id="{{ w.slug }}" data-category="{{ w.category }}">
+  <div class="work-card__media">
+    {%- if w.image %}
+    <img src="{{ w.image | relative_url }}" alt="{{ w.image_alt | default: '' }}" loading="lazy">
+    {%- else %}
+    <div class="placeholder work-card__placeholder">
+      <span class="placeholder__label">{{ w.image_label | default: "[IMAGE]" }}</span>
+      {%- if w.image_note %}<span class="placeholder__note">{{ w.image_note }}</span>{% endif %}
+    </div>
+    {%- endif %}
+  </div>
+  <div class="work-card__body">
+    <div class="work-card__top">
+      <span class="work-card__meta">{{ w.org }}{% if w.role %} · {{ w.role }}{% endif %}{% if w.period %} · {{ w.period }}{% endif %}</span>
+      {%- if w.status %}<span class="{{ status_class }}">{{ w.status }}</span>{% endif %}
+    </div>
+    <h2 class="work-card__title">{{ w.title }}</h2>
+    <dl class="work-card__facts">
+      {%- if w.problem %}<div class="work-card__fact"><dt>PROBLEM</dt><dd>{{ w.problem }}</dd></div>{% endif %}
+      {%- if w.approach %}<div class="work-card__fact"><dt>APPROACH</dt><dd>{{ w.approach }}</dd></div>{% endif %}
+      {%- if w.outcome %}<div class="work-card__fact work-card__fact--outcome"><dt>{{ w.outcome_label | default: "OUTCOME" }}</dt><dd>{{ w.outcome }}</dd></div>{% endif %}
+    </dl>
+    {%- if w.content != "" and w.content != blank %}
+    <div class="work-card__content prose">{{ w.content }}</div>
+    {%- endif %}
+    {%- if w.stack.size > 0 %}
+    <div class="work-card__stack">
+      {%- for s in w.stack %}<span class="tag tag--stack">{{ s }}</span>{% endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</article>

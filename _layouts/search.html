@@ -1,0 +1,73 @@
+---
+layout: default
+---
+{%- assign tag_list = site.tags | sort -%}
+{%- assign counts = "" | split: "" -%}
+{%- for t in tag_list %}{% assign counts = counts | push: t[1].size %}{% endfor -%}
+{%- assign counts = counts | uniq | sort | reverse -%}
+{%- assign top_tags = "" | split: "" -%}
+{%- for c in counts %}{% for t in tag_list %}{% if t[1].size == c %}{% assign top_tags = top_tags | push: t[0] %}{% endif %}{% endfor %}{% endfor -%}
+
+<div class="container">
+  <header class="page-head search-head">
+    <div class="page-head__text">
+      <span class="cmd" aria-hidden="true"><span class="cmd__prompt">$</span> grep -ri "<span data-search-echo>…</span>" ~/</span>
+      <h1 class="page-head__title">{{ page.title }}</h1>
+      <p class="page-head__intro">{{ page.description | default: site.search_intro }}</p>
+    </div>
+
+    <form class="search-form" role="search" action="{{ '/search/' | relative_url }}" method="get" data-search-form>
+      <label for="q" class="visually-hidden">Search the site</label>
+      <div class="search-box">
+        <span class="search-box__prompt" aria-hidden="true">&gt;</span>
+        <input class="search-box__input" id="q" name="q" type="search" placeholder="Type to search…" autocomplete="off" spellcheck="false" autofocus>
+        <kbd class="search-box__hint">esc to clear</kbd>
+        <button class="btn btn--primary search-box__submit" type="submit">search</button>
+      </div>
+      <div class="chip-row search-scopes" data-search-scopes>
+        <span class="chip-row__label">in:</span>
+        <button class="chip" type="button" data-scope="" aria-current="true">everything · <span data-scope-count="">0</span></button>
+        <button class="chip" type="button" data-scope="post">posts · <span data-scope-count="post">0</span></button>
+        {%- if site.show_work %}<button class="chip" type="button" data-scope="work">work · <span data-scope-count="work">0</span></button>{% endif %}
+        <button class="chip" type="button" data-scope="page">pages · <span data-scope-count="page">0</span></button>
+        <span class="chip-row__end search-stats" data-search-stats aria-live="polite">index loading…</span>
+      </div>
+    </form>
+  </header>
+
+  <div class="search-layout">
+    <section class="search-results" aria-label="Results">
+      <div class="search-results__list" data-search-results role="listbox" aria-label="Search results"></div>
+      <div class="search-results__empty" data-search-empty hidden>
+        <p class="search-results__empty-title">no matches for <span class="mono" data-search-echo-empty></span></p>
+        <p class="search-results__empty-text">Try one of the tags below, or browse the <a href="{{ '/blog/' | relative_url }}">full blog index</a>.</p>
+        <div class="chip-row">
+          {%- for t in top_tags limit: 6 %}<a class="tag tag--plain" href="{{ '/search/' | relative_url }}?q={{ t | url_encode }}">{{ t }}</a>{% endfor %}
+        </div>
+      </div>
+      <div class="search-results__idle" data-search-idle>
+        <p class="search-results__idle-text">Start typing — results appear as you go. Posts, work entries and pages are all in the index.</p>
+      </div>
+      <p class="search-results__end" data-search-end hidden></p>
+      <noscript><p class="search-results__idle-text">Search needs JavaScript. Browse the <a href="{{ '/blog/' | relative_url }}">blog index</a> or <a href="{{ '/tags/' | relative_url }}">topics</a> instead.</p></noscript>
+    </section>
+
+    <aside class="search-aside">
+      <div class="card search-aside__card">
+        <span class="aside__label">TRY A TAG</span>
+        <div class="search-aside__tags">
+          {%- for t in top_tags limit: 6 %}<a class="tag tag--plain" href="{{ '/search/' | relative_url }}?q={{ t | url_encode }}" data-search-tag="{{ t }}">{{ t }}</a>{% endfor %}
+        </div>
+      </div>
+      <div class="card search-aside__card">
+        <span class="aside__label">KEYBOARD</span>
+        <div class="search-keys">
+          <div><span>open search</span><kbd class="key">⌘ K</kbd></div>
+          <div><span>move</span><kbd class="key">↑ ↓</kbd></div>
+          <div><span>open result</span><kbd class="key">↵</kbd></div>
+          <div><span>clear</span><kbd class="key">esc</kbd></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
