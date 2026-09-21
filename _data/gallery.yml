@@ -4,43 +4,43 @@
 # kind: photo | portrait | screenshot | generated
 - file: tim-studio.jpg
   image: /assets/images/gallery/tim-studio.jpg
-  alt: "Tim, in glasses and a grey t-shirt, hand on chin, in a studio with guitars, a saxophone and green neon"
-  title: "Thinking about thinking"
+  alt: "Tim, in glasses and a grey t-shirt, hand on chin, in a studio with guitars and saxophones."
+  title: "A study in clutter"
   kind: portrait
-  year: "[YYYY]"
-  note: "The home office: guitars, a sax, green neon, and a wall of the kids' art. Also me, mid-decision."
+  year: "2026"
+  note: "Remote work means the home office slowly becomes a physical manifestation of my ego."
 - file: mtg-commanders.jpg
   image: /assets/images/gallery/mtg-commanders.jpg
   alt: "Fifteen Magic The Gathering commander decks in clear boxes lit by green LEDs"
   title: "The commander shelf"
-  kind: photo
+  kind: MTG
   year: "2026"
-  note: "My top 15 commander decks, there are many more that didn't make the shelf."
+  note: "My top 15 favorite commander decks, there are many more that didn't make the shelf. I have never won a game with Stranger Things."
 - file: aussie-partner.jpg
   image: /assets/images/gallery/aussie-partner.jpg
   alt: "A blue merle Australian Shepherd, Piper, resting her head on a blue fleece blanket"
   title: "Piper, my remote office mate"
-  kind: photo
+  kind: pet
   year: "2026"
   note: "This is Piper, resting intently just outside of the Zoom frame while I talk to other humans."
 - file: homer-sombrero-dog.jpg
   image: /assets/images/gallery/homer-sombrero-dog.jpg
   alt: "Homer, a tan dog wearing a tiny straw sombrero, looking up at the camera"
   title: "Homer is Fiesta-ready"
-  kind: photo
+  kind: pet
   year: "2025"
   note: "The hat was not his idea. The look says he'd like that noted for the record."
 - file: cat-nap.jpg
   image: /assets/images/gallery/cat-nap.jpg
   alt: "Caboodles, an orange tabby cat curled up asleep on a herringbone couch"
   title: "Do not disturb"
-  kind: photo
+  kind: pet
   year: "2024"
   note: "Caboodles works the nightshift so he demands a quiet place to sleep during the day."
 - file: goldfish-pond.jpg
   image: /assets/images/gallery/goldfish-pond.jpg
   alt: "Orange goldfish swimming in a pond beneath lily pads"
   title: "Tranquility pond"
-  kind: photo
+  kind: pet food
   year: "2023"
   note: "This is our fish pond, there is one koi, many goldfish and even more minnows."
