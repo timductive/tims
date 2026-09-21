@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{%- assign github = site.author.links | where: "icon", "github" | first -%}
+{%- assign linkedin = site.author.links | where: "icon", "linkedin" | first -%}
+
+<section class="hero section--rule">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      {% include cmd.html text=site.hero.command %}
+      <h1 class="hero__title">{{ site.hero.name }}<span class="hero__dot">.</span></h1>
+      <p class="hero__role">{{ site.hero.role }}</p>
+      <p class="hero__lede">{{ site.hero.lede }}</p>
+      <p class="hero__body">{{ site.hero.body }}</p>
+      <div class="hero__actions">
+        {%- if site.show_work %}
+        <a class="btn btn--primary" href="{{ '/work/' | relative_url }}"><span>view work</span>{% include icon.html name="arrow" size=15 %}</a>
+        <a class="btn btn--secondary" href="{{ site.posts.first.url | relative_url }}">latest post</a>
+        {%- else %}
+        <a class="btn btn--primary" href="{{ site.posts.first.url | relative_url }}"><span>latest post</span>{% include icon.html name="arrow" size=15 %}</a>
+        <a class="btn btn--secondary" href="{{ '/about/' | relative_url }}">about me</a>
+        {%- endif %}
+      </div>
+      <div class="hero__links">
+        {%- if github %}<a href="{{ github.url }}" rel="me noopener noreferrer" target="_blank">{% include icon.html name="github" size=15 %}<span>github</span></a>{% endif %}
+        {%- if linkedin %}<a href="{{ linkedin.url }}" rel="me noopener noreferrer" target="_blank">{% include icon.html name="linkedin" size=15 %}<span>linkedin</span></a>{% endif %}
+        <a href="{{ '/feed.xml' | relative_url }}">{% include icon.html name="rss" size=15 %}<span>rss</span></a>
+      </div>
+    </div>
+    <div class="hero__panel">
+      {% include gallery.html %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--rule" aria-labelledby="recent-title">
+  <div class="container">
+    {%- capture all_posts %}all {{ site.posts.size }} posts{% endcapture %}
+    {% include section-heading.html cmd="ls blog/ --recent" title="Recent posts" link_url="/blog/" link_text=all_posts %}
+    <div class="grid grid--3">
+      {%- for post in site.posts limit: 3 %}
+      {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+    {%- assign more = site.posts | slice: 3, 2 -%}
+    {%- if more.size > 0 %}
+    <div class="list-panel home__more">
+      {%- for post in more %}
+      <a class="list-panel__row" href="{{ post.url | relative_url }}">
+        <span class="list-panel__date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <span class="list-panel__title">{{ post.title }}</span>
+        {%- if post.tags.first %}<span class="list-panel__tag">{{ post.tags.first }}</span>{% endif %}
+      </a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+{%- assign featured_work = site.work | where: "featured", true | sort: "order" -%}
+{%- if site.show_work and featured_work.size > 0 %}
+<section class="section section--rule" aria-labelledby="work-title">
+  <div class="container">
+    {% include section-heading.html cmd="cat work/selected.md" title="Selected work" link_url="/work/" link_text="full portfolio" %}
+    <div class="grid grid--2">
+      {%- for w in featured_work limit: 2 %}
+      {% include work-teaser.html item=w %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- if site.show_now and site.data.now.items %}
+<section class="section section--rule home__now" aria-labelledby="now-title">
+  <div class="container split">
+    <div class="split__aside">
+      {% include cmd.html text="cat now.txt" %}
+      <h2 class="section-heading__title" id="now-title">Now</h2>
+      <p class="section-heading__note">Updated {{ site.data.now.updated }}</p>
+    </div>
+    <div class="split__body rows">
+      {%- for item in site.data.now.items %}
+      <div class="row">
+        <span class="row__key">{{ item.label }}</span>
+        <p class="row__text">{{ item.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

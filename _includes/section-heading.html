@@ -1,0 +1,17 @@
+{%- comment -%}
+Section header: cmd line + h2, optional link on the right.
+Usage: {% include section-heading.html cmd="ls blog/ --recent" title="Recent posts" link_url="/blog/" link_text="all 20 posts" %}
+{%- endcomment -%}
+<div class="section-heading">
+  <div class="section-heading__text">
+    {% include cmd.html text=include.cmd %}
+    <h2 class="section-heading__title">{{ include.title }}</h2>
+    {%- if include.note %}<p class="section-heading__note">{{ include.note }}</p>{% endif %}
+  </div>
+  {%- if include.link_url %}
+  <a class="section-heading__link" href="{{ include.link_url | relative_url }}">
+    <span>{{ include.link_text }}</span>
+    {% include icon.html name="arrow" size=14 %}
+  </a>
+  {%- endif %}
+</div>

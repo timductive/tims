@@ -1,9 +1,8 @@
 ---
 id: ''
 title: Old Ideas in an Agentic World
-header:
-  overlay_image: /assets/images/posts/old-ideas-in-an-agentic-world.jpg
-  teaser: /assets/images/posts/old-ideas-in-an-agentic-world.jpg
+image: /assets/images/posts/old-ideas-in-an-agentic-world.jpg
+image_alt: ""
 tags:
 - engineering
 - ai

@@ -1,21 +1,22 @@
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-
-    {% if site.footer.links %}
-      {% for link in site.footer.links %}
-        {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-
-    {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endunless %}
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name }} | {{ site.title }}.</div>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__id">
+      <span class="site-footer__wordmark">{% include wordmark.html %}</span>
+      <span class="site-footer__line">{{ site.location }} · {{ site.disclaimer }}</span>
+      <ul class="site-footer__social" aria-label="Elsewhere">
+        {%- for link in site.author.links %}
+        <li><a href="{{ link.url }}" rel="me noopener noreferrer" target="_blank" aria-label="{{ link.label }}">{% include icon.html name=link.icon size=15 %}</a></li>
+        {%- endfor %}
+        <li><a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">{% include icon.html name="rss" size=15 %}</a></li>
+      </ul>
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer">
+      {%- for item in site.data.navigation.main %}
+      {%- if item.enabled_by and site[item.enabled_by] != true %}{% continue %}{% endif -%}
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {%- endfor %}
+      <a href="{{ '/search/' | relative_url }}">search</a>
+      <span class="site-footer__copy">© {{ site.time | date: '%Y' }}</span>
+    </nav>
+  </div>
+</footer>

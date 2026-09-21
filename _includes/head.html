@@ -1,49 +1,29 @@
+{%- assign asset_stamp = site.time | date: "%s" -%}
 <meta charset="utf-8">
-
-{% assign asset_stamp = site.time | date: "%s" %}
-
-<link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}?v={{ asset_stamp }}">
-
-{% include seo.html %}
-
-{% unless site.atom_feed.hide %}
-  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-{% endunless %}
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#031106">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0F0D">
 <style>
-  /* Paint the site shell immediately to avoid a light flash on navigation. */
-  html {
-    background: #031106;
-    color-scheme: dark;
-  }
-
-  body {
-    min-height: 100vh;
-    background:
-      radial-gradient(circle at top, rgba(68, 176, 84, 0.16), transparent 34%),
-      radial-gradient(circle at bottom, rgba(34, 120, 46, 0.14), transparent 42%),
-      linear-gradient(180deg, #05150a 0%, #020703 100%);
-    color: #98f5a7;
-  }
+  /* Paint the shell before main.css arrives so navigation never flashes light. */
+  html { background: #0B0F0D; color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; background: #0B0F0D; color: #E8EDE9; }
 </style>
 
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ asset_stamp }}">
-<link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-400.woff2' | relative_url }}?v={{ asset_stamp }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ '/assets/fonts/vt323-latin-400.woff2' | relative_url }}?v={{ asset_stamp }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+{% seo %}
 
-{% if site.head_scripts %}
-  {% for script in site.head_scripts %}
-    <script src="{{ script | relative_url }}?v={{ asset_stamp }}"></script>
-  {% endfor %}
-{% endif %}
+<link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}?v={{ asset_stamp }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} Feed" href="{{ '/feed.xml' | relative_url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ asset_stamp }}">
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ asset_stamp }}" defer></script>
+{%- if page.layout == "search" %}
+<script src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}?v={{ asset_stamp }}" defer></script>
+{%- endif %}

@@ -1,0 +1,18 @@
+{%- if page.previous or page.next %}
+<nav class="section section--flush-top post-prevnext" aria-label="Adjacent posts">
+  <div class="prevnext">
+    {%- if page.previous %}
+    <a class="card prevnext__card prevnext__card--prev" href="{{ page.previous.url | relative_url }}" rel="prev">
+      <span class="prevnext__label">← previous</span>
+      <span class="prevnext__title">{{ page.previous.title }}</span>
+    </a>
+    {%- else %}<span></span>{% endif %}
+    {%- if page.next %}
+    <a class="card prevnext__card prevnext__card--next" href="{{ page.next.url | relative_url }}" rel="next">
+      <span class="prevnext__label">next →</span>
+      <span class="prevnext__title">{{ page.next.title }}</span>
+    </a>
+    {%- endif %}
+  </div>
+</nav>
+{%- endif %}

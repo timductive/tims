@@ -1,0 +1,29 @@
+{%- comment -%}
+Up to 3 posts sharing tags with the current page (most-shared tag first), padded with recent posts.
+{%- endcomment -%}
+{%- assign related = "" | split: "" -%}
+{%- for tag in page.tags -%}
+  {%- for p in site.tags[tag] -%}
+    {%- if p.url != page.url %}{% assign related = related | push: p %}{% endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- for p in site.posts -%}
+  {%- if p.url != page.url %}{% assign related = related | push: p %}{% endif -%}
+{%- endfor -%}
+{%- assign related = related | uniq -%}
+{%- assign first_tag = page.tags | first | default: "posts" -%}
+<section class="section section--tight post-related" aria-labelledby="related-title">
+  <div class="rule-heading">
+    <span class="cmd" id="related-title"><span class="cmd__prompt">$</span> grep -l "{{ first_tag }}" blog/</span>
+    <span class="rule-heading__line"></span>
+  </div>
+  <div class="grid grid--3">
+    {%- for p in related limit: 3 %}
+    <a class="card mini-card" href="{{ p.url | relative_url }}">
+      <span class="mini-card__date">{{ p.date | date: "%Y-%m-%d" }}</span>
+      <span class="mini-card__title">{{ p.title }}</span>
+      <span class="mini-card__lede">{% include post-lede.html post=p %}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>

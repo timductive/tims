@@ -1,0 +1,15 @@
+{%- comment -%}3-up post card. Usage: {% include post-card.html post=post %}{%- endcomment -%}
+{%- assign p = include.post -%}
+<a class="card post-card" href="{{ p.url | relative_url }}">
+  {% include post-hero.html post=p %}
+  <div class="card__body">
+    <div class="meta">
+      <span>{{ p.date | date: "%Y-%m-%d" }}</span>
+      <span class="meta__sep">·</span>
+      <span>{% include read-time.html post=p %}</span>
+    </div>
+    <h3 class="card__title">{{ p.title }}</h3>
+    <p class="card__lede">{% include post-lede.html post=p %}</p>
+    <span class="card__cta">read →</span>
+  </div>
+</a>

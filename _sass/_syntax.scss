@@ -1,0 +1,20 @@
+// Rouge token colours — jade for structure, amber for values, meta for comments.
+.highlight {
+  .c, .c1, .cm, .cp, .cs { color: var(--text-meta); font-style: italic; }   // comments
+  .k, .kd, .kn, .kp, .kr, .kt, .kc, .ow { color: var(--jade); }              // keywords
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: var(--amber); } // strings
+  .m, .mf, .mh, .mi, .mo, .il { color: var(--amber); }                        // numbers
+  .n, .nx, .p, .o { color: var(--text-ui); }                                  // names, punctuation, operators
+  .nf, .fm { color: var(--jade-hover); }                                      // function names
+  .nc, .nn { color: var(--text-heading); }                                    // classes, namespaces
+  .nb, .bp { color: var(--jade-mark); }                                       // builtins
+  .na, .nt { color: var(--jade); }                                            // attributes, tags
+  .nv, .vi, .vg, .vc { color: var(--text-ui); }                               // variables
+  .gd { color: #e07a7a; }                                                     // diff removed
+  .gi { color: var(--jade); }                                                 // diff added
+  .gh, .gu { color: var(--text-heading); font-weight: 600; }
+  .ge { font-style: italic; }
+  .gs { font-weight: 700; }
+  .err { color: #e07a7a; }
+  .w { color: inherit; }
+}

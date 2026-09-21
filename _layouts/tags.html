@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- assign tag_list = site.tags | sort -%}
+<div class="container">
+  <header class="page-head">
+    <div class="page-head__text">
+      {% include cmd.html text=page.cmd %}
+      <h1 class="page-head__title">{{ page.title }}</h1>
+      <p class="page-head__intro">{{ page.description }}</p>
+    </div>
+    <div class="chip-row blog-filter" aria-label="Jump to tag">
+      {%- for t in tag_list %}
+      <a class="chip" href="#{{ t[0] | slugify }}">{{ t[0] }} · {{ t[1].size }}</a>
+      {%- endfor %}
+    </div>
+  </header>
+
+  <section class="blog-list">
+    {%- for t in tag_list %}
+    <div class="blog-year" id="{{ t[0] | slugify }}">
+      <div class="rule-heading">
+        <span class="rule-heading__label">{{ t[0] }}</span>
+        <span class="rule-heading__line"></span>
+        <a class="rule-heading__link" href="{{ '/blog/' | relative_url }}?tag={{ t[0] | url_encode }}">filter posts →</a>
+      </div>
+      {%- for post in t[1] %}
+      {% include post-row.html post=post %}
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </section>
+</div>

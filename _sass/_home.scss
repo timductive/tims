@@ -1,0 +1,187 @@
+.hero {
+  padding: 88px 0 76px;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--grid-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.hero__inner {
+  display: flex;
+  gap: 72px;
+  align-items: flex-start;
+}
+.hero__text {
+  width: 640px;
+  max-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.hero__title {
+  font-size: clamp(44px, 6.5vw, 68px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.hero__dot { color: var(--jade); }
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--jade);
+  letter-spacing: 0.01em;
+}
+.hero__lede {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.4vw, 26px);
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 570px;
+}
+.hero__body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 570px;
+}
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.hero__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.hero__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  color: var(--text-muted);
+}
+.hero__links a:hover { color: var(--jade); }
+.hero__panel { flex-grow: 1; min-width: 0; }
+
+// Gallery panel
+.gallery:focus-visible { box-shadow: var(--focus-ring); border-radius: var(--r-lg); }
+.gallery__stage {
+  position: relative;
+  height: 268px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-media);
+}
+.gallery__stage { overflow: hidden; }
+.gallery__frame {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.gallery.is-ready .gallery__frame { transition: transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1); }
+// Without JS only the first frame/meta shows; with JS every frame is positioned by transform.
+.gallery:not(.is-enhanced) .gallery__frame:not(:first-child),
+.gallery:not(.is-enhanced) [data-gallery-meta]:not(:first-child) { display: none; }
+.gallery__img { width: 100%; height: 100%; object-fit: cover; }
+.gallery__placeholder { height: 100%; }
+.gallery__kind {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  padding: 5px 9px;
+  border-radius: var(--r-xs);
+  background: rgba(11, 15, 13, 0.86);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--amber);
+  line-height: 1;
+}
+.gallery__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: rgba(11, 15, 13, 0.82);
+  color: var(--text-ui);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.gallery__nav:hover { color: var(--jade); border-color: var(--jade); }
+.gallery__nav--prev { left: 12px; }
+.gallery__nav--next { right: 12px; }
+// Without JS the buttons do nothing; hide them until enhanced.
+.gallery:not(.is-enhanced) .gallery__nav,
+.gallery:not(.is-enhanced) .gallery__dots { display: none; }
+
+.gallery__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.gallery__dot {
+  width: 26px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery__dot span {
+  display: block;
+  width: 8px;
+  height: 6px;
+  border-radius: 3px;
+  background: #33403A;
+  transition: width 120ms ease, background-color 120ms ease;
+}
+.gallery__dot[aria-current="true"] span { width: 24px; background: var(--jade); }
+.gallery__hint { margin-left: auto; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); }
+.gallery__meta {
+  padding: 20px 20px 22px;
+  line-height: 2.05;
+  display: grid;
+}
+// Every meta block occupies the same cell, so the panel height is the tallest block's
+// and switching frames never shifts the page.
+.is-enhanced .gallery__meta > [data-gallery-meta] {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+.is-enhanced .gallery__meta > [data-gallery-meta].is-current {
+  visibility: visible;
+  opacity: 1;
+}
+.kv__cmd { margin-bottom: 8px; font-size: 12.5px; }
+
+.home__more { margin-top: 22px; }
+
+@media (max-width: 1024px) {
+  .hero { padding: 56px 0 56px; }
+  .hero__inner { flex-direction: column; gap: 40px; }
+  .hero__text { width: 100%; }
+  .hero__panel { width: 100%; }
+}
+@media (max-width: 720px) {
+  .hero { padding: 40px 0 44px; }
+  .hero__text { gap: 18px; }
+  .hero__actions .btn { width: 100%; }
+  .gallery__stage { height: 200px; }
+}

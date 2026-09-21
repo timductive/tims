@@ -1,0 +1,4 @@
+{%- comment -%}Read time in minutes at ~200 wpm. Usage: {% include read-time.html post=post %}{%- endcomment -%}
+{%- assign words = include.post.content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
+{{ minutes }} min

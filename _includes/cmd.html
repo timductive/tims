@@ -1,0 +1,2 @@
+{%- comment -%}A quiet `$ command` line. Usage: {% include cmd.html text="ls blog/ --recent" %}{%- endcomment -%}
+<span class="cmd{% if include.class %} {{ include.class }}{% endif %}" aria-hidden="true"><span class="cmd__prompt">$</span> {{ include.text }}</span>

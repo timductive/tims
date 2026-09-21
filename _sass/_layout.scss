@@ -1,0 +1,84 @@
+// Page container: 1120 content + 80 gutters at 1280.
+.container {
+  width: 100%;
+  max-width: calc(var(--content-max) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section {
+  padding-top: 72px;
+  padding-bottom: 76px;
+}
+.section--tight { padding-top: 56px; padding-bottom: 60px; }
+.section--rule { border-bottom: 1px solid var(--border); }
+.section--flush-top { padding-top: 0; }
+
+// Page hero header (Writing / Work / Search)
+.page-head {
+  padding: 72px 0 40px;
+}
+.page-head__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.page-head__text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.page-head__title {
+  font-size: clamp(38px, 5vw, 52px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.page-head__intro {
+  margin-top: 4px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 620px;
+}
+
+// Two-column split with a fixed left label column (Now, Education)
+.split {
+  display: flex;
+  gap: 72px;
+  align-items: flex-start;
+}
+.split__aside {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.split__body { flex-grow: 1; min-width: 0; }
+
+// Grids
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (max-width: 1024px) {
+  .section { padding-top: 56px; padding-bottom: 60px; }
+  .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split { gap: 40px; }
+  .split__aside { width: 220px; }
+}
+
+@media (max-width: 720px) {
+  .section { padding-top: 44px; padding-bottom: 48px; }
+  .page-head { padding: 44px 0 28px; }
+  .grid--3, .grid--2 { grid-template-columns: minmax(0, 1fr); }
+  .split { flex-direction: column; gap: 24px; }
+  .split__aside { width: 100%; }
+}

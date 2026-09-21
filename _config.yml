@@ -1,120 +1,92 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Quips & Quirks
-subtitle: ...on life, love and the pursuit of software engineering
+# Values here are read by the layouts/includes via {{ site.* }}.
+title: timschnell.dev
+subtitle: 
 name: Tim Schnell
-logo: "assets/images/logo.png"
-email: tim.schnell@hey.com
-url: https://tims.io
-description: >- # this means to ignore newlines until "baseurl:"
+email: timductive@gmail.com
+url: https://timschnell.dev
+description: >-
   Software Engineering Management thoughts and quandaries.
-twitter_username: __tims___
 github_username: timductive
-minimal_mistakes_skin: dark
-search: true
-head_scripts:
-  - /assets/js/terminal-ui.js
 
-# Build settings
-markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: America/Chicago # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# Identity shown in the header/footer wordmark: ~/timschnell.dev
+wordmark:
+  prefix: "~/"
+  name: "timschnell"
+  tld: ".dev"
+# Set to true to show the Work page everywhere: nav, hero button, home section, search.
+show_work: false
+# Set to true to show the "Now" section (from _data/now.yml) on the home page.
+show_now: false
+location: "Austin, Texas"
+disclaimer: "Thoughts & opinions are my own."
 
-include:
-  - _pages
+# Home hero copy
+hero:
+  command: whoami
+  name: Tim Schnell
+  role: Software Engineering Leader
+  lede: "Growing teams, shipping code and debugging the system."
+  body: "Leadership, politics, power dynamics, integrity, confidence, empathy, intelligence, context; what makes us human, makes our software. Here be dragons, roll for initiative."
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+# Page intros
+blog_intro: "Notes on engineering leadership, agentic development practice, and the parts of front-end craft that don't go out of style."
+work_intro:
+search_intro: "Everything on the site — posts, work, and pages — in one index."
 
 author:
   name   : "Tim Schnell"
   avatar : "/assets/images/tim-bio-min.png"
+  portrait: "/assets/images/tim-bio.jpg"
+  title  : "Director of Engineering, Elastic"
   bio    : "Director of Engineering @elastic, previously @rackspace and a sundry of startups. Thoughts & opinions are my own."
+  # icon is a name understood by _includes/icon.html
   links:
+    - label: "GitHub"
+      icon: github
+      url: "https://github.com/timductive"
+    - label: "LinkedIn"
+      icon: linkedin
+      url: "https://www.linkedin.com/in/timschnell"
     - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      icon: facebook
       url: "https://www.facebook.com/tim.schnell"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/__tims___"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/timschnell"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/timductive"
 
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/timductive"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/__tims___"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/timschnell"
+# Build settings
+markdown: kramdown
+permalink: /:categories/:title/
+timezone: America/Chicago
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+
+collections:
+  work:
+    output: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-gist
+  - jemoji
 
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      show_date: true
-  # _pages
+      layout: post
   - scope:
       path: "_pages"
       type: pages
     values:
-      layout: single
-      author_profile: true
-
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+      layout: page
