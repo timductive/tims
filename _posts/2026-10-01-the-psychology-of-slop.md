@@ -1,6 +1,9 @@
 ---
 id: ''
 title: The Psychology of Slop
+header:
+  overlay_image: /assets/images/posts/psychology-of-slop-title.jpg
+  teaser: /assets/images/posts/psychology-of-slop-title.jpg
 tags:
 - engineering
 - ai
