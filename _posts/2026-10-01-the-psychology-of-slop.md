@@ -1,9 +1,8 @@
 ---
 id: ''
 title: The Psychology of Slop
-header:
-  overlay_image: /assets/images/posts/psychology-of-slop-title.jpg
-  teaser: /assets/images/posts/psychology-of-slop-title.jpg
+image: /assets/images/posts/psychology-of-slop-title.jpg
+image_alt: "A robot drawn in the pose of Leonardo da Vinci's Vitruvian Man, with four arms, on aged parchment"
 tags:
 - engineering
 - ai
