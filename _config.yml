@@ -38,8 +38,8 @@ author:
   name   : "Tim Schnell"
   avatar : "/assets/images/tim-bio-min.png"
   portrait: "/assets/images/tim-bio.jpg"
-  title  : "Director of Engineering, Elastic"
-  bio    : "Director of Engineering @elastic, previously @rackspace and a sundry of startups. Thoughts & opinions are my own."
+  title  : "Senior Director of Engineering, Elastic"
+  bio    : "Senior Director of Engineering @elastic, previously @rackspace and a sundry of startups. Thoughts & opinions are my own."
   # icon is a name understood by _includes/icon.html
   links:
     - label: "GitHub"
