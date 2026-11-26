@@ -15,7 +15,7 @@ wordmark:
   name: "timschnell"
   tld: ".dev"
 # Set to true to show the Work page everywhere: nav, hero button, home section, search.
-show_work: false
+show_work: true
 # Set to true to show the "Now" section (from _data/now.yml) on the home page.
 show_now: false
 location: "Austin, Texas"

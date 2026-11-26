@@ -67,7 +67,7 @@ day-of-year so it's stable per post). The first tag is the one shown on chips.
 ### Adding work
 
 Create `_work/<slug>.md` with `title, org, role, period, status (active | in progress | shipped),
-category (leadership | product | side), featured, order, image, image_label, summary, problem,
+category (leadership | product | tooling | side), featured, order, image, image_label, summary, problem,
 approach, outcome, outcome_label, stack`. `featured: true` entries (sorted by `order`) appear on the
 home page.
 
