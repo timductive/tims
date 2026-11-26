@@ -1,19 +1,17 @@
 # Repos shown under "$ gh repo list" on the Work page. Static — fill in by hand.
-- name: "[repo-name]"
-  url: https://github.com/timductive
-  description: "[One line on what it does and why it exists.]"
-  language: Python
-  language_color: "#5CCB8C"
-  stars: "[N]"
-- name: "[repo-name]"
-  url: https://github.com/timductive
-  description: "[One line on what it does and why it exists.]"
+- name: "crithits/agent-standards"
+  url: https://github.com/crithits/agent-standards
+  description: "Shared lint config, tsconfig and coding-agent rules for React + TypeScript repos, synced to every repo by PR."
+  language: JavaScript
+  language_color: "#D9A441"
+- name: "crithits/react-ts-template"
+  url: https://github.com/crithits/react-ts-template
+  description: "Starter for React + TypeScript repos, wired to agent-standards: Vite, React Compiler, strict lint and types, agent files included."
   language: TypeScript
   language_color: "#D9A441"
-  stars: "[N]"
-- name: "[repo-name]"
-  url: https://github.com/timductive
-  description: "[One line on what it does and why it exists.]"
-  language: Lua
-  language_color: "#7C8B83"
-  stars: "[N]"
+- name: "es-schema"
+  url: https://github.com/timductive/es-schema
+  description: "Common Data Schemas for Elasticsearch: standard, extensible entity definitions for analytics, observability, security and business data."
+  language: Python
+  language_color: "#5CCB8C"
+  stars: "2"
