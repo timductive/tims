@@ -1,10 +1,16 @@
 # Career timeline for /about/. Newest first. `current: true` renders the period in jade.
-- period: "2019 — present"
+- period: "2026 — present"
   current: true
-  title: Director of Engineering
+  title: Senior Director of Engineering
   org: Elastic
   location: Remote
   summary: "Currently leading the Kibana Application Experience group."
+
+- period: "2019 — 2026"
+  title: Director of Engineering
+  org: Elastic
+  location: Remote
+  summary: "Led the Discover, Dashboards and Visualizations teams."
 
 - period: "2016 — 2023"
   title: Co-founder
